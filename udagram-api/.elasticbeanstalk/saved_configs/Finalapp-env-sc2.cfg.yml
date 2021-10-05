@@ -1,0 +1,86 @@
+EnvironmentConfigurationMetadata:
+  Description: Configuration created from the EB CLI using "eb config save".
+  DateCreated: '1633441465000'
+  DateModified: '1633441465000'
+Platform:
+  PlatformArn: arn:aws:elasticbeanstalk:eu-central-1::platform/Node.js 14 running on 64bit Amazon Linux 2/5.4.5
+OptionSettings:
+  aws:elasticbeanstalk:application:environment:
+    AWS_REGION: eu-central-1
+    POSTGRES_USERNAME: postgres
+    PORT: '5555'
+    POSTGRES_HOST: projectdb.cccwczkccwol.eu-central-1.rds.amazonaws.com
+    JWT_SECRET: secret
+    AWS_PROFILE: e58258f6b22ae6df45c3557b9d0d9ec2fba3cbbd8792e4b158f763c9cfcb08a7
+    POSTGRES_PASSWORD: postgres
+    AWS_BUCKET: bucket-kirovo
+    POSTGRES_DB: postgres
+  aws:elasticbeanstalk:environment:
+    ServiceRole: arn:aws:iam::087527893007:role/aws-elasticbeanstalk-service-role
+    LoadBalancerType: application
+  aws:elasticbeanstalk:healthreporting:system:
+    ConfigDocument:
+      Version: 1
+      CloudWatchMetrics:
+        Instance:
+          RootFilesystemUtil: null
+          CPUIrq: null
+          LoadAverage5min: null
+          ApplicationRequests5xx: null
+          ApplicationRequests4xx: null
+          CPUUser: null
+          LoadAverage1min: null
+          ApplicationLatencyP50: null
+          CPUIdle: null
+          InstanceHealth: null
+          ApplicationLatencyP95: null
+          ApplicationLatencyP85: null
+          ApplicationLatencyP90: null
+          CPUSystem: null
+          ApplicationLatencyP75: null
+          CPUSoftirq: null
+          ApplicationLatencyP10: null
+          ApplicationLatencyP99: null
+          ApplicationRequestsTotal: null
+          ApplicationLatencyP99.9: null
+          ApplicationRequests3xx: null
+          ApplicationRequests2xx: null
+          CPUIowait: null
+          CPUNice: null
+        Environment:
+          InstancesSevere: null
+          InstancesDegraded: null
+          ApplicationRequests5xx: null
+          ApplicationRequests4xx: null
+          ApplicationLatencyP50: null
+          ApplicationLatencyP95: null
+          ApplicationLatencyP85: null
+          InstancesUnknown: null
+          ApplicationLatencyP90: null
+          InstancesInfo: null
+          InstancesPending: null
+          ApplicationLatencyP75: null
+          ApplicationLatencyP10: null
+          ApplicationLatencyP99: null
+          ApplicationRequestsTotal: null
+          InstancesNoData: null
+          ApplicationLatencyP99.9: null
+          ApplicationRequests3xx: null
+          ApplicationRequests2xx: null
+          InstancesOk: null
+          InstancesWarning: null
+      Rules:
+        Environment:
+          ELB:
+            ELBRequests4xx:
+              Enabled: true
+          Application:
+            ApplicationRequests4xx:
+              Enabled: true
+  aws:autoscaling:launchconfiguration:
+    DisableIMDSv1: true
+    IamInstanceProfile: aws-elasticbeanstalk-ec2-role
+EnvironmentTier:
+  Type: Standard
+  Name: WebServer
+AWSConfigurationTemplateVersion: 1.1.0.0
