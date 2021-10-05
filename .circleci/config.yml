@@ -13,11 +13,6 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - run:
-          command: |
-            pip install --upgrade python
-            python --version
-            pip install auto-py-to-exe
       - eb/setup
       - node/install
       - checkout
@@ -46,4 +41,3 @@ jobs:
           name: Deploy Backend
           command: |
             npm run backend:deploy
-
