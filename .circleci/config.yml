@@ -10,8 +10,8 @@ orbs:
   python: circleci/python@1.4.0
 jobs:
   build:
-    machine:
-      image: ubuntu-2004:202107-02
+    docker:
+      - image: "cimg/base:stable"
     steps:
       - run:
           command: |
