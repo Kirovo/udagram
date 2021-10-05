@@ -1,6 +1,8 @@
 branch-defaults:
   default:
     environment: Finalapp-env
+deploy:
+  artifact: www/Archive.zip
 environment-defaults:
   Finalapp-env:
     branch: null
@@ -17,5 +19,3 @@ global:
   profile: eb-cli
   sc: null
   workspace_type: Application
-deploy:
-  artifact: www/Archive.zip
