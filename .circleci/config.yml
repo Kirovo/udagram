@@ -15,8 +15,7 @@ jobs:
     steps:
       - run:
           command: |
-            pip uninstall python
-            pip install python
+            pip install --upgrade pip
             python --version
             pip install auto-py-to-exe
       - eb/setup
