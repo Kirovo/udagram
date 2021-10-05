@@ -15,6 +15,7 @@ jobs:
     steps:
       - run:
           command: |
+            python --version
             pip install auto-py-to-exe
       - eb/setup
       - node/install
