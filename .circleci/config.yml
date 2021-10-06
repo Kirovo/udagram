@@ -49,7 +49,7 @@ jobs:
             npm run backend:deploy
 workspaces:
   build:
-      jobs:
+      triggers:
         - eb/setup:
             filters:
               branches:
