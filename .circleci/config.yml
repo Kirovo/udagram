@@ -50,20 +50,38 @@ jobs:
 workspaces:
   build:
       jobs:
-        - eb/setup
-        - node/install
-        - checkout
-        - aws-cli/setup
-        - Front-End Install
-        - Back-End Install
-        - Front-End Build:
-           filters:
+        - eb/setup:
+            filters:
               branches:
-                only: master
-        - Back-End Build:
-           filters:
+                ignore: master
+        - node/install:
+            filters:
               branches:
-                only: master
-        - Deploy Frontend
-        - Deploy Backend
+                ignore: master
+        - checkout:
+            filters:
+              branches:
+                ignore: master
+        - aws-cli/setup:
+            filters:
+              branches:
+                ignore: master
+        - Front-End Install:
+            filters:
+              branches:
+                ignore: master
+        - Back-End Install:
+            filters:
+              branches:
+                ignore: master
+        - Front-End Build
+        - Back-End Build
+        - Deploy Frontend:
+            filters:
+              branches:
+                ignore: master
+        - Deploy Backend:
+            filters:
+              branches:
+                ignore: master
  
