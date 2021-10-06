@@ -15,7 +15,7 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      # installing hte declarred tools
+      # installing the declared tools
       - eb/setup
       - node/install
       - checkout
@@ -38,7 +38,7 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
-      # Deploying the application to AWS
+    # Deploying the application to AWS
       - run:
           name: Deploy Frontend
           command: |
@@ -47,15 +47,14 @@ jobs:
           name: Deploy Backend
           command: |
             npm run backend:deploy
-workflows:
-  build-deploy:
-  # running only build jobs when commiting to the master branch
-    jobs:
-      Front-End Build:
-        filters:
-          branches:
-            only: master
-      Back-End Build:
-        filters:
-          branches:
-            only: master
+workspaces:
+  build:
+      jobs:
+        - Front-End Build:
+           filters:
+              branches:
+                only: master
+        - Back-End Build:
+           filters:
+              branches:
+                only: master
