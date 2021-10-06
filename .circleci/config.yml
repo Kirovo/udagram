@@ -47,3 +47,15 @@ jobs:
           name: Deploy Backend
           command: |
             npm run backend:deploy
+workflows:
+  build-deploy:
+  # running only build jobs when commiting to the master branch
+    jobs:
+      Front-End Build:
+        filters:
+          branches:
+            only: master
+      Back-End Build:
+        filters:
+          branches:
+            only: master
