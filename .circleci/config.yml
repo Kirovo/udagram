@@ -49,7 +49,13 @@ jobs:
             npm run backend:deploy
 workspaces:
   build:
-      triggers:
-        - Front-End Build
-        - Back-End Build
+      jobs:
+        - Front-End Build:
+          filters:
+            branches:
+              only: master
+        - Back-End Build:
+          filters:
+            branches:
+              only: master
  
